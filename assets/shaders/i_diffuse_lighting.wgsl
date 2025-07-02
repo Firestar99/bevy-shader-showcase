@@ -11,7 +11,7 @@
 fn fragment(
     in: VertexOutput,
 ) -> @location(0) vec4<f32> {
-    let light_color = vec3f(1.0, 0.7, 0.4);
+    let light_color = vec3f(1.0, 1.0, 1.0);
 //    let light_color = lights.directional_lights[0].color.xyz;
 
     let light_dir = lights.directional_lights[0].direction_to_light;
