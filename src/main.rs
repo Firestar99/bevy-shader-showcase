@@ -7,7 +7,6 @@ mod custom_shaders;
 mod base_plane;
 mod camera_controller;
 pub mod double_sided;
-mod extended_material;
 mod scene_setup;
 
 fn main() {
@@ -42,8 +41,11 @@ fn main() {
         .add_systems(Startup, l_pbr_base_color::setup)
         .add_systems(Startup, m_pbr_materials::setup)
         .add_plugins(MaterialPlugin::<
-            ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
+            ExtendedMaterial<StandardMaterial, n_pbr_shaders::CellShadedMaterialExtension>,
         >::default())
-        .add_systems(Startup, extended_material::setup)
+        .add_plugins(MaterialPlugin::<
+            ExtendedMaterial<StandardMaterial, n_pbr_shaders::AnimatedMaterialExtension>,
+        >::default())
+        .add_systems(Startup, n_pbr_shaders::setup)
         .run();
 }
