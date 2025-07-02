@@ -12,8 +12,10 @@
   * specular lighting
   * normal texture
   * water waves
-  * PBR
+* PBR
+  * first PBR materials
   * metalness roughness spheres
+  * IBL
 * color manipulation
   * recoloring
   * cell shading
