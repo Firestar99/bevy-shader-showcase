@@ -9,10 +9,10 @@ pub fn setup(
     mut materials: ResMut<Assets<ExtendedMaterial<StandardMaterial, CellShadedMaterialExtension>>>,
     asset_server: Res<AssetServer>,
 ) {
-    let offset = vec3(36.0, 2.5, 0.0);
+    let offset = vec3(38.0, 2.5, 0.0);
     for (i, base) in all_materials(&asset_server).into_iter().enumerate() {
         commands.spawn((
-            Mesh3d(meshes.add(Sphere::default())),
+            Mesh3d(meshes.add(Sphere::new(0.75))),
             MeshMaterial3d(materials.add(ExtendedMaterial {
                 base: base.clone(),
                 extension: CellShadedMaterialExtension {},

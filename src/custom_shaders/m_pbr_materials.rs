@@ -9,13 +9,13 @@ pub fn setup(
 ) {
     let mut spawn_sphere = |mat: StandardMaterial, offset: Vec3| {
         commands.spawn((
-            Mesh3d(meshes.add(Sphere::default())),
+            Mesh3d(meshes.add(Sphere::new(0.75))),
             MeshMaterial3d(materials.add(mat)),
             Transform::from_translation(offset),
         ));
     };
 
-    let offset = vec3(24.0, 0.5, 0.0);
+    let offset = vec3(26.0, 0.5, 0.0);
     for (i, base) in learn_opengl_pbr_materials::all_materials(&asset_server)
         .into_iter()
         .enumerate()
