@@ -8,3 +8,4 @@
 * grass.png
 * blending_transparent_window.png
 * container2.png
+* pbr/*

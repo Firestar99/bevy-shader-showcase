@@ -39,6 +39,7 @@ fn main() {
         .add_plugins(MaterialPlugin::<k_phong_lighting::CustomMaterial>::default())
         .add_systems(Startup, k_phong_lighting::setup)
         .add_systems(Startup, l_pbr_base_color::setup)
+        .add_systems(Startup, m_pbr_materials::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())
@@ -58,7 +59,7 @@ fn setup(mut commands: Commands) {
     commands.spawn((
         Camera3d::default(),
         Projection::Perspective(PerspectiveProjection {
-            fov: 90.,
+            fov: 70.,
             ..Default::default()
         }),
         CameraController {

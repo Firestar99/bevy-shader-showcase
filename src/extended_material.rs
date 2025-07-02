@@ -31,7 +31,7 @@ pub fn setup(
             },
             extension: MyExtension { quantize_steps: 3 },
         })),
-        Transform::from_xyz(40.0, 0.5, 0.0),
+        Transform::from_xyz(50.0, 0.5, 0.0),
     ));
 }
 
