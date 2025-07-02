@@ -25,6 +25,9 @@ fn main() {
         .add_systems(Startup, d_animated::setup)
         .add_plugins(MaterialPlugin::<e_texture::CustomMaterial>::default())
         .add_systems(Startup, e_texture::setup)
+        .add_plugins(MaterialPlugin::<f_blending::DiscardMaterial>::default())
+        .add_plugins(MaterialPlugin::<f_blending::BlendMaterial>::default())
+        .add_systems(Startup, f_blending::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())
