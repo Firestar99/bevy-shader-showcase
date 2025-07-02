@@ -32,7 +32,7 @@ pub fn setup(
         Mesh3d(meshes.add(Cuboid::default())),
         MeshMaterial3d(materials.add(CustomMaterial {
             color: LinearRgba::WHITE,
-            color_texture: Some(asset_server.load("textures/slice_square.png")),
+            color_texture: Some(asset_server.load("textures/container2.png")),
         })),
         Transform::from_xyz(12.0, 0.5, -6.0),
     ));
