@@ -6,6 +6,9 @@ use bevy::{
     prelude::*,
     render::render_resource::*,
 };
+use crate::camera_controller::{CameraController, CameraControllerPlugin};
+
+mod camera_controller;
 
 /// This example uses a shader source file from the assets subdirectory
 const SHADER_ASSET_PATH: &str = "shaders/extended_material.wgsl";
@@ -16,6 +19,7 @@ fn main() {
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, MyExtension>,
         >::default())
+        .add_plugins(CameraControllerPlugin)
         .add_systems(Startup, setup)
         .add_systems(Update, rotate_things)
         .run();
@@ -56,6 +60,7 @@ fn setup(
     // camera
     commands.spawn((
         Camera3d::default(),
+        CameraController::default(),
         Transform::from_xyz(-2.0, 2.5, 5.0).looking_at(Vec3::ZERO, Vec3::Y),
     ));
 }
