@@ -29,6 +29,7 @@ fn setup(
     mut commands: Commands,
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<ExtendedMaterial<StandardMaterial, MyExtension>>>,
+    mut standard_materials: ResMut<Assets<StandardMaterial>>,
 ) {
     // sphere
     commands.spawn((
@@ -50,18 +51,33 @@ fn setup(
         Transform::from_xyz(0.0, 0.5, 0.0),
     ));
 
+    // base plane
+    commands.spawn((
+        Mesh3d(meshes.add(Plane3d::default().mesh().size(20.0, 20.0))),
+        MeshMaterial3d(standard_materials.add(StandardMaterial {
+            base_color: Color::srgb(0.3, 0.5, 0.3),
+            unlit: true,
+            ..Default::default()
+        })),
+        Transform::from_xyz(0.0, -2.0, 0.0),
+    ));
+
     // light
     commands.spawn((
         DirectionalLight::default(),
-        Transform::from_xyz(1.0, 1.0, 1.0).looking_at(Vec3::ZERO, Vec3::Y),
+        Transform::from_xyz(0.0, 0.0, 0.0).looking_at(Vec3::ZERO, Vec3::Y),
         Rotate,
     ));
 
     // camera
     commands.spawn((
         Camera3d::default(),
+        Projection::Perspective(PerspectiveProjection {
+            fov: 90.,
+            ..Default::default()
+        }),
         CameraController::default(),
-        Transform::from_xyz(-2.0, 2.5, 5.0).looking_at(Vec3::ZERO, Vec3::Y),
+        Transform::from_translation(Vec3::new(-2.0, 2.5, 5.0) / 3.).looking_at(Vec3::ZERO, Vec3::Y),
     ));
 }
 
