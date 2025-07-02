@@ -38,6 +38,7 @@ fn main() {
         .add_systems(Startup, j_ambient_lighting::setup)
         .add_plugins(MaterialPlugin::<k_phong_lighting::CustomMaterial>::default())
         .add_systems(Startup, k_phong_lighting::setup)
+        .add_systems(Startup, l_pbr_base_color::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())

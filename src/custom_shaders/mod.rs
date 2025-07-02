@@ -9,3 +9,4 @@ pub mod h_normals;
 pub mod i_diffuse_lighting;
 pub mod j_ambient_lighting;
 pub mod k_phong_lighting;
+pub mod l_pbr_base_color;
