@@ -6,6 +6,7 @@ mod custom_shaders;
 
 mod base_plane;
 mod camera_controller;
+pub mod double_sided;
 mod extended_material;
 
 fn main() {
@@ -25,9 +26,10 @@ fn main() {
         .add_systems(Startup, d_animated::setup)
         .add_plugins(MaterialPlugin::<e_texture::CustomMaterial>::default())
         .add_systems(Startup, e_texture::setup)
-        .add_plugins(MaterialPlugin::<f_blending::DiscardMaterial>::default())
-        .add_plugins(MaterialPlugin::<f_blending::BlendMaterial>::default())
-        .add_systems(Startup, f_blending::setup)
+        .add_plugins(MaterialPlugin::<f_discard::CustomMaterial>::default())
+        .add_systems(Startup, f_discard::setup)
+        .add_plugins(MaterialPlugin::<g_blending::CustomMaterial>::default())
+        .add_systems(Startup, g_blending::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())

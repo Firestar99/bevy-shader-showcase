@@ -3,4 +3,5 @@ pub mod b_tex_coords;
 pub mod c_circle;
 pub mod d_animated;
 pub mod e_texture;
-pub mod f_blending;
+pub mod f_discard;
+pub mod g_blending;

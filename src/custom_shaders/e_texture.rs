@@ -16,7 +16,7 @@ pub fn setup(
         })),
         Transform::from_xyz(12.0, 0.5, 0.0),
     ));
-        
+
     // blue bevy
     commands.spawn((
         Mesh3d(meshes.add(Cuboid::default())),
