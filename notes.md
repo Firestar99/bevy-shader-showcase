@@ -6,6 +6,7 @@
   * animated
   * texture
   * discard
+  * blending
 * lighting
   * diffuse lighting
   * ambient lighting
@@ -31,3 +32,6 @@
 * custom_post_processing
 * animate_shader
 * extended_material
+* load_gltf
+* pbr
+* reflection_probes

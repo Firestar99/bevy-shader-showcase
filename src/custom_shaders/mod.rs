@@ -5,3 +5,4 @@ pub mod d_animated;
 pub mod e_texture;
 pub mod f_discard;
 pub mod g_blending;
+pub mod h_normals;

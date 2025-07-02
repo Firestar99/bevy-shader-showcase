@@ -8,7 +8,7 @@ pub fn setup(
     mut meshes: ResMut<Assets<Mesh>>,
     mut standard_materials: ResMut<Assets<StandardMaterial>>,
 ) {
-    let length = 20.0;
+    let length = 40.0;
     let border_radius = 5.0;
 
     // base plane

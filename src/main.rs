@@ -30,6 +30,8 @@ fn main() {
         .add_systems(Startup, f_discard::setup)
         .add_plugins(MaterialPlugin::<g_blending::CustomMaterial>::default())
         .add_systems(Startup, g_blending::setup)
+        .add_plugins(MaterialPlugin::<h_normals::CustomMaterial>::default())
+        .add_systems(Startup, h_normals::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())
