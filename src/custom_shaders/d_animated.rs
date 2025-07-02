@@ -10,7 +10,7 @@ pub fn setup(
     commands.spawn((
         Mesh3d(meshes.add(Cuboid::default())),
         MeshMaterial3d(materials.add(CustomMaterial {})),
-        Transform::from_xyz(9.0, 0.5, 0.0),
+        Transform::from_xyz(6.0, 0.5, 0.0),
     ));
 }
 

@@ -13,7 +13,7 @@ pub fn setup(
             color: LinearRgba::WHITE,
             color_texture: Some(asset_server.load("textures/container2.png")),
         })),
-        Transform::from_xyz(27.0, 0.5, 0.0),
+        Transform::from_xyz(18.0, 0.5, 0.0),
     ));
 
     commands.spawn((
@@ -22,7 +22,7 @@ pub fn setup(
             color: LinearRgba::WHITE,
             color_texture: None,
         })),
-        Transform::from_xyz(27.0, 0.5, -3.0),
+        Transform::from_xyz(18.0, 2.5, 0.0),
     ));
 }
 

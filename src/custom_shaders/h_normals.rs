@@ -22,7 +22,7 @@ pub fn setup(
     };
 
     for (i, mesh) in all_meshes.into_iter().enumerate() {
-        spawn(mesh, vec3(21.0, 0.5, -3.0 * i as f32));
+        spawn(mesh, vec3(14.0, 2.0 * i as f32 + 0.5, 0.));
     }
 }
 

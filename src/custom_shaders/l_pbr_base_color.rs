@@ -13,12 +13,12 @@ pub fn setup(
 
             ..Default::default()
         })),
-        Transform::from_xyz(33.0, 0.5, 0.0),
+        Transform::from_xyz(22.0, 0.5, 0.0),
     ));
 
     commands.spawn((
         Mesh3d(meshes.add(Sphere::default())),
         MeshMaterial3d(materials.add(StandardMaterial::default())),
-        Transform::from_xyz(33.0, 0.5, -3.0),
+        Transform::from_xyz(22.0, 2.5, 0.0),
     ));
 }

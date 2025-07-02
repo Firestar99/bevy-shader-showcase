@@ -14,7 +14,7 @@ pub fn setup(
             color: LinearRgba::WHITE,
             color_texture: Some(asset_server.load("textures/icon.png")),
         })),
-        Transform::from_xyz(12.0, 0.5, 0.0),
+        Transform::from_xyz(8.0, 0.5, 0.0),
     ));
 
     // blue bevy
@@ -24,7 +24,7 @@ pub fn setup(
             color: LinearRgba::BLUE,
             color_texture: Some(asset_server.load("textures/icon.png")),
         })),
-        Transform::from_xyz(12.0, 0.5, -3.0),
+        Transform::from_xyz(8.0, 2.5, 0.0),
     ));
 
     // slice square
@@ -34,7 +34,7 @@ pub fn setup(
             color: LinearRgba::WHITE,
             color_texture: Some(asset_server.load("textures/container2.png")),
         })),
-        Transform::from_xyz(12.0, 0.5, -6.0),
+        Transform::from_xyz(8.0, 4.5, 0.0),
     ));
 }
 

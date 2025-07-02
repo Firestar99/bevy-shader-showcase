@@ -32,7 +32,7 @@ pub fn setup(
         ));
     };
 
-    let offset = vec3(36.0, 0.5, 0.0);
+    let offset = vec3(24.0, 0.5, 0.0);
     for (i, base) in all_materials.into_iter().enumerate() {
         let variants = [
             StandardMaterial {
@@ -53,7 +53,7 @@ pub fn setup(
             base,
         ];
         for (k, mat) in variants.into_iter().enumerate() {
-            spawn_sphere(mat, offset + vec3(2. * i as f32, 0., -6. + 2. * k as f32));
+            spawn_sphere(mat, offset + vec3(2. * i as f32, 6.0 - 2. * k as f32, 0.));
         }
     }
 }
