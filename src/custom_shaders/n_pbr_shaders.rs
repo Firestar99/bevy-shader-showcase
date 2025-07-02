@@ -1,4 +1,4 @@
-use crate::custom_shaders::m_pbr_materials::all_materials;
+use crate::learn_opengl_pbr_materials::all_materials;
 use bevy::pbr::{ExtendedMaterial, MaterialExtension};
 use bevy::prelude::*;
 use bevy::render::render_resource::{AsBindGroup, ShaderRef};

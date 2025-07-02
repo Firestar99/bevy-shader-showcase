@@ -7,6 +7,7 @@ mod custom_shaders;
 mod base_plane;
 mod camera_controller;
 pub mod double_sided;
+mod learn_opengl_pbr_materials;
 mod scene_setup;
 
 fn main() {
