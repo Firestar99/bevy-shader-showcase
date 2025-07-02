@@ -1,11 +1,28 @@
+use bevy::image::{ImageAddressMode, ImageLoaderSettings, ImageSampler, ImageSamplerDescriptor};
 use bevy::prelude::*;
 
 pub fn learn_opengl_material(asset_server: &Res<AssetServer>, path: &str) -> StandardMaterial {
+    let settings = |s: &mut _| {
+        *s = ImageLoaderSettings {
+            sampler: ImageSampler::Descriptor(ImageSamplerDescriptor {
+                // rewriting mode to repeat image,
+                address_mode_u: ImageAddressMode::MirrorRepeat,
+                address_mode_v: ImageAddressMode::MirrorRepeat,
+                ..default()
+            }),
+            ..default()
+        }
+    };
+
     StandardMaterial {
-        base_color_texture: Some(asset_server.load(format!("{path}/albedo.png"))),
-        normal_map_texture: Some(asset_server.load(format!("{path}/normal.png"))),
+        base_color_texture: Some(
+            asset_server.load_with_settings(format!("{path}/albedo.png"), settings),
+        ),
+        normal_map_texture: Some(
+            asset_server.load_with_settings(format!("{path}/normal.png"), settings),
+        ),
         metallic_roughness_texture: Some(
-            asset_server.load(format!("{path}/metallic_roughness.png")),
+            asset_server.load_with_settings(format!("{path}/metallic_roughness.png"), settings),
         ),
         metallic: 1.0,
         perceptual_roughness: 1.0,
