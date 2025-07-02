@@ -213,8 +213,9 @@ fn run_camera_controller(
             controller.velocity = Vec3::ZERO;
         }
     }
-    
-    let yaw_transform = Transform::from_rotation(Quat::from_euler(EulerRot::ZYX, 0.0, controller.yaw, 0.));
+
+    let yaw_transform =
+        Transform::from_rotation(Quat::from_euler(EulerRot::ZYX, 0.0, controller.yaw, 0.));
     let forward = *yaw_transform.forward();
     let right = *yaw_transform.right();
     transform.translation += controller.velocity.x * dt * right

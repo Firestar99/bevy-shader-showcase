@@ -3,9 +3,9 @@
   * single color
   * tex coords
   * CSG circle (constructive solid geometry)
-  * discard
   * animated
   * texture
+  * discard
 * lighting
   * diffuse lighting
   * ambient lighting

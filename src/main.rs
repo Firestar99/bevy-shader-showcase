@@ -17,6 +17,12 @@ fn main() {
         .add_systems(Startup, base_plane::setup)
         .add_plugins(MaterialPlugin::<a_basic_color::CustomMaterial>::default())
         .add_systems(Startup, a_basic_color::setup)
+        .add_plugins(MaterialPlugin::<b_tex_coords::CustomMaterial>::default())
+        .add_systems(Startup, b_tex_coords::setup)
+        .add_plugins(MaterialPlugin::<c_circle::CustomMaterial>::default())
+        .add_systems(Startup, c_circle::setup)
+        .add_plugins(MaterialPlugin::<d_animated::CustomMaterial>::default())
+        .add_systems(Startup, d_animated::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())
