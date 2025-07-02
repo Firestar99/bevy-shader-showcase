@@ -23,6 +23,8 @@ fn main() {
         .add_systems(Startup, c_circle::setup)
         .add_plugins(MaterialPlugin::<d_animated::CustomMaterial>::default())
         .add_systems(Startup, d_animated::setup)
+        .add_plugins(MaterialPlugin::<e_texture::CustomMaterial>::default())
+        .add_systems(Startup, e_texture::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())
