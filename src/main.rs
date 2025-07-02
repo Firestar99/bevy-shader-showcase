@@ -1,5 +1,6 @@
 use crate::camera_controller::{CameraController, CameraControllerPlugin};
 use bevy::{pbr::ExtendedMaterial, prelude::*};
+use bevy::core_pipeline::Skybox;
 use custom_shaders::*;
 
 mod custom_shaders;
@@ -47,7 +48,7 @@ fn main() {
         .run();
 }
 
-fn setup(mut commands: Commands) {
+fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     // light
     commands.spawn((
         DirectionalLight::default(),
@@ -68,6 +69,17 @@ fn setup(mut commands: Commands) {
             key_run: KeyCode::ControlLeft,
             scroll_factor: 0.2,
             ..CameraController::default()
+        },
+        Skybox {
+            brightness: 2000.0,
+            image: asset_server.load("textures/hdr/pisa_specular_rgb9e5_zstd.ktx2"),
+            ..default()
+        },
+        EnvironmentMapLight {
+            diffuse_map: asset_server.load("textures/hdr/pisa_diffuse_rgb9e5_zstd.ktx2"),
+            specular_map: asset_server.load("textures/hdr/pisa_specular_rgb9e5_zstd.ktx2"),
+            intensity: 900.0,
+            ..default()
         },
         Transform::from_translation(Vec3::new(-2.0, 2.5, 5.0) / 3.).looking_at(Vec3::ZERO, Vec3::Y),
     ));
