@@ -23,12 +23,11 @@ fn fragment(
 //    let ambient_light = lights.ambient_light;
 
     let shininess = 64.;
-    let specular_strength = 0.5;
     let camera_position = view.world_position;
     let view_dir = normalize(camera_position - in.world_position.xyz);
     let reflect_dir = reflect(-light_dir, normal);
     let specular_factor = pow(max(dot(view_dir, reflect_dir), 0.0), shininess);
-    let specular_light = specular_strength * specular_factor * light_color;
+    let specular_light = specular_factor * light_color;
 
     let material_color = textureSample(material_color_texture, material_color_sampler, in.uv) * material_color;
     let color = (specular_light + diffuse_light + ambient_light) * material_color.xyz;
