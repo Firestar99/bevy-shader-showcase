@@ -6,3 +6,4 @@ pub mod e_texture;
 pub mod f_discard;
 pub mod g_blending;
 pub mod h_normals;
+pub mod i_diffuse_lighting;
