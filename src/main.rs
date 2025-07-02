@@ -34,6 +34,8 @@ fn main() {
         .add_systems(Startup, h_normals::setup)
         .add_plugins(MaterialPlugin::<i_diffuse_lighting::CustomMaterial>::default())
         .add_systems(Startup, i_diffuse_lighting::setup)
+        .add_plugins(MaterialPlugin::<j_ambient_lighting::CustomMaterial>::default())
+        .add_systems(Startup, j_ambient_lighting::setup)
         .add_plugins(MaterialPlugin::<
             ExtendedMaterial<StandardMaterial, extended_material::MyExtension>,
         >::default())
