@@ -15,15 +15,14 @@ var<uniform> my_extended_material: MyExtendedMaterial;
 fn fragment(
     in: VertexOutput,
     @builtin(front_facing) is_front: bool,
-) -> FragmentOutput {
+) -> @location(0) vec4<f32> {
     var pbr_input = pbr_input_from_standard_material(in, is_front);
     pbr_input.material.base_color = alpha_discard(pbr_input.material, pbr_input.material.base_color);
-    var out: FragmentOutput;
-    out.color = apply_pbr_lighting(pbr_input);
+    var out_color = apply_pbr_lighting(pbr_input);
 
-    out.color = vec4<f32>(vec4<u32>(out.color * f32(my_extended_material.quantize_steps))) / f32(my_extended_material.quantize_steps);
+    out_color = vec4<f32>(vec4<u32>(out_color * f32(my_extended_material.quantize_steps))) / f32(my_extended_material.quantize_steps);
 
-    out.color = main_pass_post_lighting_processing(pbr_input, out.color);
+    out_color = main_pass_post_lighting_processing(pbr_input, out_color);
 
-    return out;
+    return out_color;
 }
