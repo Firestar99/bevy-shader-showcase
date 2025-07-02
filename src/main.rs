@@ -42,11 +42,12 @@ fn main() {
         .add_systems(Startup, l_pbr_base_color::setup)
         .add_systems(Startup, m_pbr_materials::setup)
         .add_plugins(MaterialPlugin::<
-            ExtendedMaterial<StandardMaterial, n_pbr_shaders::CellShadedMaterialExtension>,
+            ExtendedMaterial<StandardMaterial, n_pbr_animated::AnimatedMaterialExtension>,
         >::default())
+        .add_systems(Startup, n_pbr_animated::setup)
         .add_plugins(MaterialPlugin::<
-            ExtendedMaterial<StandardMaterial, n_pbr_shaders::AnimatedMaterialExtension>,
+            ExtendedMaterial<StandardMaterial, o_pbr_cell_shaded::CellShadedMaterialExtension>,
         >::default())
-        .add_systems(Startup, n_pbr_shaders::setup)
+        .add_systems(Startup, o_pbr_cell_shaded::setup)
         .run();
 }
