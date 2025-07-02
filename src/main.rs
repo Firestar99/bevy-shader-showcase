@@ -44,7 +44,6 @@ fn setup(mut commands: Commands) {
             key_up: KeyCode::Space,
             key_run: KeyCode::ControlLeft,
             scroll_factor: 0.2,
-            run_speed: 20.0,
             ..CameraController::default()
         },
         Transform::from_translation(Vec3::new(-2.0, 2.5, 5.0) / 3.).looking_at(Vec3::ZERO, Vec3::Y),
