@@ -4,8 +4,8 @@ use bevy::core_pipeline::Skybox;
 use bevy::math::Vec3;
 use bevy::pbr::DirectionalLight;
 use bevy::prelude::{
-    Camera3d, Commands, Component, EnvironmentMapLight, KeyCode, PerspectiveProjection, Projection,
-    Query, Res, Time, Transform, With, default,
+    default, Camera3d, Commands, Component, EnvironmentMapLight, KeyCode, PerspectiveProjection,
+    Projection, Query, Res, Time, Transform, With,
 };
 
 pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {

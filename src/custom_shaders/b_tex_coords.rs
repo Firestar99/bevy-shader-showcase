@@ -22,6 +22,10 @@ pub struct CustomMaterial {}
 /// You only need to implement functions for features that need non-default behavior. See the Material api docs for details!
 impl Material for CustomMaterial {
     fn fragment_shader() -> ShaderRef {
-        "shaders/b_tex_coords.wgsl".into()
+        if cfg!(feature = "rust-gpu") {
+            "rust-gpu-shaders/b_tex_coords.wgsl".into()
+        } else {
+            "shaders/b_tex_coords.wgsl".into()
+        }
     }
 }

@@ -1,7 +1,7 @@
 use bevy::asset::AssetServer;
 use bevy::image::{ImageAddressMode, ImageLoaderSettings, ImageSampler, ImageSamplerDescriptor};
 use bevy::pbr::StandardMaterial;
-use bevy::prelude::{Res, default};
+use bevy::prelude::{default, Res};
 
 pub fn learn_opengl_material(asset_server: &Res<AssetServer>, path: &str) -> StandardMaterial {
     let settings = |s: &mut _| {

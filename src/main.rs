@@ -10,6 +10,11 @@ pub mod double_sided;
 mod learn_opengl_pbr_materials;
 mod scene_setup;
 
+#[cfg(feature = "rust-gpu")]
+pub const SHADER_DIR: &str = "rust-gpu-shaders";
+#[cfg(not(feature = "rust-gpu"))]
+pub const SHADER_DIR: &str = "shaders";
+
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)

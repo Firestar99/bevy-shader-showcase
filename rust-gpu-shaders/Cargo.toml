@@ -1,0 +1,14 @@
+[package]
+name = "bevy-shader-showcase-shaders"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+spirv-std = { git = "https://github.com/rust-gpu/rust-gpu", rev = "b49693ff595594f3537eae6fc7d5e82bda3ad3b4", features = ["bytemuck"] }
+glam = { version = "0.29.2", default-features = false }
+
+[lints.rust]
+unexpected_cfgs = { level = "allow", check-cfg = ['cfg(target_arch, values("spirv"))'] }
